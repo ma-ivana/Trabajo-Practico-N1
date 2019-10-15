@@ -1,29 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
-$color1: #004A99;
-$color2: #fff;
-$color3: #00458f;
-$color4: #BFDDFE;
-$color5: #003B7A;
-$color6: rgba(20, 65, 110, 0.01);
-$color7: #0062CC;
-$color8: #283d50;
-$color-azul:#004289;
-$color-azul-hover:#007BFF;
-$color9: rgba(138, 136, 136, 0.685);
-$color10: rgba(46, 45, 45, 0.925);
-$letraPar: 15px;
-$letraParch: 10px;
-$letraH3: 36px;
-$letraH5: 22px;
-$marginMM: 1.4em;
-$marginMedium: 1em;
-$marginSmall: 0.5em;
-$marginSmaller: 0.2em;
-$marginSmallerer: 0.1em;
-$fontCard: 'Open Sans',
-sans-serif;
+@import "_variables";
+@import "_mixins";
 
 
 * {
@@ -32,7 +11,6 @@ sans-serif;
 }
 
 body {
-    // background-color: $color1;
     font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
@@ -56,7 +34,7 @@ body {
         display: flex;
 
         li {
-            padding: 20px;
+            padding: $padding1;
 
             a {
                 text-decoration: none;
@@ -99,7 +77,7 @@ nav {
     img {
         height: 26px;
         width: 67px;
-        padding: 20px;
+        padding: $padding1;
     }
 }
 
@@ -112,25 +90,22 @@ nav {
     background-color: $color1;
     color: $color2;
     text-align: center;
-    padding-top: 25px;
+    padding-top: $padding2;
 
     h3 {
-        font-size: $letraH3;
-        font-weight: 600;
+        @include h3Style;
     }
 
     .top {
         font-size: $letraPar;
-        padding-left: 30%;
-        padding-right: 30%;
+        padding-left: $padding3;
+        padding-right: $padding3;
     }
 
     .card-container {
-        padding: 35px 12%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
+        padding: $padding4 12%;
+        @include displayFlex1;
+        
         .card {
             width: 300px;
             height: 280px;
@@ -138,9 +113,8 @@ nav {
             background-color: $color3;
             margin-left: 5px;
             margin-right: 5px;
-            padding: 35px 25px 15px;
-            display: flex;
-            flex-direction: column;
+            padding: $padding4 $padding2 $padding5;
+            @include displayFlex4;
             font-family: $fontCard;
 
             i {
@@ -149,8 +123,7 @@ nav {
             }
 
             .body {
-                display: flex;
-                flex-direction: column;
+                @include displayFlex4;
                 justify-content: space-around;
 
                 h5 {
@@ -198,11 +171,9 @@ nav {
     }
 
     .numbers {
-        padding: 35px 12%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
+        padding: $padding4 12%;
+        @include displayFlex1;
+        
         .stats {
             flex: 1;
 
@@ -230,9 +201,9 @@ nav {
     text-align: center;
 
     height: 450px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    box-shadow: 0 0 20px 0 rgba(194, 232, 247, 0.767) inset;
+    padding-top: $padding2;
+    padding-bottom: $padding2;
+    box-shadow: 0 0 $padding1 0 rgba(194, 232, 247, 0.767) inset;
     position: relative;
     user-select: none;
 
@@ -241,8 +212,7 @@ nav {
     }
 
     h3 {
-        font-size: $letraH3;
-        font-weight: 600;
+        @include h3Style;
         color: #283D50;
 
         margin-bottom: $marginSmallerer;
@@ -252,8 +222,10 @@ nav {
         position: absolute;
         left: 15%;
         z-index: -1;
-    }
 
+        }
+    
+    
 
     #nav-dots {
         width: 100%;
@@ -262,7 +234,6 @@ nav {
         left: 0px;
         position: absolute;
         display: inline-block;
-        // padding-bottom: 10px;
         text-align: center;
         z-index: 99;
         cursor: default;
@@ -308,27 +279,24 @@ nav {
 .team {
     background-color: $color2;
     text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: $padding2;
+    padding-bottom: $padding2;
 
     h3 {
-        font-size: $letraH3;
-        font-weight: 600;
+        @include h3Style;
         color: #283D50;
     }
 
     .top {
         font-size: $letraPar;
-        padding-left: 30%;
-        padding-right: 30%;
+        padding-left: $padding3;
+        padding-right: $padding3;
     }
 
     .team-section {
-        padding: 35px 210px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
+        padding: $padding4 210px;
+        @include displayFlex1;
+        
         .image1,
         .image2,
         .image3,
@@ -362,10 +330,8 @@ nav {
             height: 100%;
             border-radius: 50%;
             background-image: linear-gradient(rgba(15, 94, 173, 0.616), rgba(15, 94, 173, 0.616));
-            display: flex;
+            @include displayFlex3;
             z-index: 2;
-            justify-content: center;
-            align-items: center;
             color: $color2;
             visibility: hidden;
             opacity: 0;
@@ -390,9 +356,7 @@ nav {
                 }
 
                 .icon-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    @include displayFlex3;
                     color: $color2;
 
                     .icon {
@@ -462,9 +426,7 @@ nav {
 
 .clientslog {
     padding: 64px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include displayFlex3;
     overflow: hidden;
     flex-wrap: wrap;
     width: 90%;
@@ -527,183 +489,137 @@ nav {
                             SECCIÓN FOOTER
 -------------------------------------------------------------------------*/
 
-/*
-body {
-    margin: 0
-}
+/* - El div "wayne" deberia empezar un poco mas abajo, en sentido vertical, que los demas. 
+Un margin-top o un display: flex, flex-direction: column, justify-content: center, serian posibles soluciones
+- Si le quitamos el width de 40% al div de contact us, nos evitamos el problema de que los iconos se achiquen y pierdan la forma
+redonda al achicar la pantalla
+- El input esta un poco angosto. Yo haria que label fuera flex, y le daria al input type email flex 2, y al input submit flex 1 para que siempre
+ocupen el 100% del label y se vean mas anchos. Esto tambien soluciona el problema de que se pongan uno debajo del otro en algunas resoluciones. 
+- En resoluciones de entre 600 y 900px, las columnas 1 y 2, y las columnas 3 y 4, se ven muy juntas entre si. Quiza un margin en
+la media query pueda ser una solucion sencilla. En esa misma resolucion, hay muy poco aire en la caja en el bottom. Un padding 
+haria que se viera mucho mejor. 
+- Atencion a los iconos en resoluciones menores a 600px: no deberian ocupar el 100% del ancho, sino quedar ubicados a la izquierda
+- El CSS en general esta desordenado: es bueno escribirlo en el mismo orden que el HTML, asi es mas rapido ubicar donde se encuentra
+el estilo de un elemento en particular. 
+*/
+
+
 footer {
-    color: white;
-    background-color: #004A99;
+    color: $color2;
+    width: 100%;
+    background-color: $color1;
     height: 300px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $fontFooter;
     font-size: 14px;
     padding: 8px 10px;
     display: flex;
     line-height: 1.5;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.parte1 {
-    display: flex;
-    flex: 1;
-}
-.parte2 {
-    display: flex;
-    flex: 1;
-}
-h2 {
-    margin-top: 5%;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 40px;
-    margin-bottom: 0;
-}
-section {
-    display: flex;
     justify-content: space-evenly;
-}
-.columna1 {
-    width: 80%;
-}
-.columna3 {
-    width: 40%;
-}
-.image {
-    color: white;
-    display: flex;
-    justify-content: left;
-    padding-right: 0%;
-}
-.icon {
-    width: 35px;
-    height: 35px;
-    background-color: #007BFF;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-}
-.icon:hover {
-    background-color: #0062CC;
-}
-.columna4 {
-    width: 53%;
-    letter-spacing: 0.001em;
-}
-span {
-    font-weight: bold;
-}
-.copyright {
-    background-color: #00428A;
-    height: 150px;
-}
-ul {
-    padding: 0;
-    list-style-type: none;
-    line-height: 2;
-}
-a:link {
-    text-decoration: none;
-    color: $color2;
-}
-a:visited {
-    text-decoration: none;
-    color: $color2;
+    
+
+    .parte1 {
+        @include partesFooter;
+
+        .columna1 {
+            width: 70%;
+            padding: 10px;
+       
+            h2 {
+                margin-top: 5%;
+                font-size: 36px;
+                font-weight: 400;
+                line-height: 40px;
+                margin-bottom: 0;
+            }
+        }
+
+        .columna2 {
+            width: 30%;
+
+            ul {
+                padding: 0;
+                list-style-type: none;
+                line-height: 2;
+            
+                a:visited {
+                    text-decoration: none;
+                    color: $color2;
+                }
+                a:link {
+                    text-decoration: none;
+                    color: $color2;
+                }
+            }
+        }
     }
-input {
-    border: none;
-    padding: 0;
-    height: 33px;
+    .parte2 {
+        @include partesFooter;
+    
+        .columna3 {
+            width: 40%;
+
+            span {
+                font-weight: bold;
+            }
+            
+            .image {
+                color: white;
+                display: flex;
+                justify-content: left;
+                padding-right: 0%;
+
+                .icon {
+                    width: 35px;
+                    height: 35px;
+                    background-color: #007BFF;
+                    border-radius: 50%;
+                    @include displayFlex3;
+                    margin-right: 8px;
+                }
+                .icon:hover {
+                    background-color: #0062CC;
+                }
+            }
+        }
+
+        .columna4 {
+            width: 53%;
+            letter-spacing: 0.001em;
+
+            input {
+                border: none;
+                padding: 0;
+                height: 33px;
+            }
+            input[type=submit]:hover {
+                background-color: #0062CC;
+            }
+
+            .submit-button {
+                background-color: #007BFF;
+                border: none;
+                padding: 0;
+                height: 33px;
+                width: 90px;
+                color: $color2;
+            }
+        }
+    }
 }
-.submit-button {
-    background-color: #007BFF;
-    border: none;
-    padding: 0;
-    height: 33px;
-    width: 90px;
-    color: #fff;
-}
-input[type=submit]:hover {
-    background-color: #0062CC;
-}
+
 .copyright {
     background-color: #00428A;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     font-size: 15px;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include displayFlex3;
     text-align: center;
 }
-@media (min-width: 601px) and (max-width: 900px) {
-    footer {
-        display: flex;
-        flex-direction: column;
-    }
-}
-.parte1 {
-    display: flex;
-}
-.columna1 {
-    flex: 1;
-}
-.columna2 {
-    flex: 1;
-}
-.parte2 {
-    display: flex;
-    flex: 1;
-}
-.columna3 {
-    flex: 1;
-}
-.columna4 {
-    flex: 1;
-}
-.copyright {
-    height: 100%;
-}
-input,
-.s {
-    height: 33px;
-}
-@media (max-width: 600px) {
-    footer {
-        display: flex;
-        flex-direction: column;
-        font-size: smaller;
-        height: 100%;
-    }
-    .parte1 {
-        flex-wrap: wrap;
-    }
-    .parte2 {
-        flex-wrap: wrap;
-    }
-    .Columna1 {
-        width: 100%;
-    }
-    .Columna2 {
-        width: 100%;
-    }
-    .Columna3 {
-        width: 100%;
-    }
-    .Columna4 {
-        width: 100%;
-    }
-    .copyright {
-        font-size: 11px;
-        height: 100%;
-    }
-}
-.copyright span {
-    font-weight: bold
-}
-*/
+
+
+
+
 
 /*------------------------------------------------------------------------
                             SECCIÓN RESPONSIVE
@@ -733,21 +649,21 @@ input,
         }
 
         .card-container {
-            display: flex;
-            flex-direction: column;
+            @include displayFlex4;
             align-items: center;
             margin: 5px;
-            padding-left: 15px;
-            padding-right: 15px;
+
+            padding-left: $padding5;
+            padding-right: $padding5;
+            
 
             .card {
                 width: 90%;
                 height: 100%;
                 border-radius: 3%;
                 margin: 15px;
-                padding: 35px 35px 0;
-                display: flex;
-                flex-direction: column;
+                padding: $padding4 $padding4 0;
+                @include displayFlex4;
                 font-family: $fontCard;
 
                 .body {
@@ -771,7 +687,7 @@ input,
                     #readmore {
                         display: block;
                         font-weight: 600;
-                        font-size: 20px;
+                        font-size: $letramed;
                         color: $color2;
                         margin-top: $marginSmallerer;
                         margin-bottom: 0;
@@ -799,10 +715,8 @@ input,
 
 @media (max-width: 800px) {
     .whyUs .numbers {
-        padding: 35px 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        padding: $padding4 10%;
+        @include displayFlex2;
         flex-wrap: wrap;
 
         #arriba {
@@ -816,13 +730,13 @@ input,
         .stats {
             .title {
                 font-weight: 700;
-                font-size: 48px;
+                font-size: $letragr;
                 color: $color2;
                 margin: 0;
             }
 
             .element {
-                font-size: 15px;
+                font-size: $letraPar;
                 color: $color4;
                 margin: 0;
             }
@@ -838,18 +752,15 @@ input,
         padding-bottom: $marginSmallerer;
 
         h3 {
-            margin-top: $marginSmallerer;
-            margin-bottom: $marginSmallerer;
+            @include marginH3;
         }
 
         .top {
-            padding-left: 25%;
-            padding-right: 25%;
+            @include paddingTopParagraph;
         }
 
         .team-section {
-            padding-left: $marginMM;
-            padding-right: $marginMM;
+            @include paddingMedium;
             display: flex;
             justify-content: space-between;
             flex-wrap: nowrap;
@@ -872,18 +783,15 @@ input,
         padding-bottom: $marginSmallerer;
 
         h3 {
-            margin-top: $marginSmallerer;
-            margin-bottom: $marginSmallerer;
+            @include marginH3;
         }
 
         .top {
-            padding-left: 25%;
-            padding-right: 25%;
+            @include paddingTopParagraph;
         }
 
         .team-section {
-            padding-left: $marginMM;
-            padding-right: $marginMM;
+            @include paddingMedium;
             display: flex;
             flex-wrap: wrap;
 
@@ -914,13 +822,11 @@ input,
         padding-bottom: $marginSmallerer;
 
         h3 {
-            margin-top: $marginSmallerer;
-            margin-bottom: $marginSmallerer;
+            @include marginH3;
         }
 
         .top {
-            padding-left: 25%;
-            padding-right: 25%;
+            @include paddingTopParagraph;
         }
 
         .team-section {
@@ -951,8 +857,7 @@ input,
         background-color: #ECF5FF;
         text-align: center;
         height: 450px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        @include padding2;
         box-shadow: 0 0 20px 0 rgba(194, 232, 247, 0.767) inset;
         position: relative;
         user-select: none;
@@ -962,8 +867,7 @@ input,
         }
 
         h3 {
-            font-size: $letraH3;
-            font-weight: 600;
+            @include h3Style;
             color: #283D50;
             margin-bottom: $marginSmallerer;
         }
@@ -982,7 +886,6 @@ input,
                 display: none;
             }
         }
-
 
         #nav-dots {
             width: 100%;
@@ -1036,8 +939,7 @@ input,
         background-color: #ECF5FF;
         text-align: center;
         height: 450px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        @include padding2;
         box-shadow: 0 0 20px 0 rgba(194, 232, 247, 0.767) inset;
         position: relative;
         user-select: none;
@@ -1047,8 +949,7 @@ input,
         }
 
         h3 {
-            font-size: $letraH3;
-            font-weight: 600;
+            @include h3Style;
             color: #283D50;
             margin-bottom: $marginSmallerer;
         }
@@ -1110,3 +1011,82 @@ input,
         }
     }
 }
+
+
+/*------------------------------------------------------------------------
+                            MEDIA QUERY TABLET FOR FOOTER
+-------------------------------------------------------------------------*/
+@media (min-width: 601px) and (max-width: 800px) {
+    footer {
+        @include displayFlex4;
+        height: 100%;
+    
+        .parte1 {
+            @include footerMedia;
+
+            .columna1 {
+                flex: 1;
+            }
+            .columna2 {
+                flex: 1;
+            }
+        }
+
+        .parte2 {
+            @include footerMedia;
+
+            .columna3 {
+                flex: 1;
+            }
+            .columna4 {
+                flex: 1;
+
+                input, .submit-button {
+                    height: 33px;
+                }
+            }
+        }
+    }
+    .copyright {
+        height: 100%;
+    }
+}
+
+/*------------------------------------------------------------------------
+                            MEDIA QUERY CEL FOR FOOTER
+-------------------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+    footer {
+        @include displayFlex4;
+        font-size: smaller;
+        height: 100%;
+    
+        .parte1 {
+            flex-wrap: wrap;
+                
+            .columna1 {
+            width: 100%;
+            }
+            .columna2 {
+            width: 100%;
+            }
+        }
+        .parte2 {
+            flex-wrap: wrap;
+        
+            .columna3 {
+                width: 100%;
+            }
+            .columna4 {
+            width: 100%;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: 11px;
+        height: 100%;
+    }
+}
+
