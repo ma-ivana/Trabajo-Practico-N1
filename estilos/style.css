@@ -272,7 +272,11 @@ nav img {
   cursor: pointer;
 }
 
-.testimonials #i1:checked ~ #one, .testimonials #i2:checked ~ #two, .testimonials #i3:checked ~ #three, .testimonials #i4:checked ~ #four, .testimonials #i5:checked ~ #five {
+.testimonials #i1:checked ~ #one,
+.testimonials #i2:checked ~ #two,
+.testimonials #i3:checked ~ #three,
+.testimonials #i4:checked ~ #four,
+.testimonials #i5:checked ~ #five {
   display: block;
   z-index: 99;
 }
@@ -520,9 +524,43 @@ nav img {
   width: 100%;
 }
 
+.contact .contact-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contact .contact-body .col-cont-bdy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact .contact-body .col-cont-bdy .map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  /*overflow: hidden;*/
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 /*------------------------------------------------------------------------
                             SECCIÓN FOOTER
 -------------------------------------------------------------------------*/
+
 /* - El div "wayne" deberia empezar un poco mas abajo, en sentido vertical, que los demas. 
 Un margin-top o un display: flex, flex-direction: column, justify-content: center, serian posibles soluciones
 - Si le quitamos el width de 40% al div de contact us, nos evitamos el problema de que los iconos se achiquen y pierdan la forma
@@ -536,6 +574,7 @@ haria que se viera mucho mejor.
 - El CSS en general esta desordenado: es bueno escribirlo en el mismo orden que el HTML, asi es mas rapido ubicar donde se encuentra
 el estilo de un elemento en particular. 
 */
+
 footer {
   color: #fff;
   width: 100%;
@@ -840,7 +879,10 @@ footer .parte2 .columna4 .submit-button {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  .team .image1, .team .image2, .team .image3, .team .image4 {
+  .team .image1,
+  .team .image2,
+  .team .image3,
+  .team .image4 {
     height: 200px;
     height: 200px;
     padding: 0.1em;
@@ -877,7 +919,10 @@ footer .parte2 .columna4 .submit-button {
     -ms-flex-preferred-size: 47%;
         flex-basis: 47%;
   }
-  .team .team-section .image1, .team .team-section .image2, .team .team-section .image3, .team .team-section .image4 {
+  .team .team-section .image1,
+  .team .team-section .image2,
+  .team .team-section .image3,
+  .team .team-section .image4 {
     height: 315px;
   }
 }
@@ -909,7 +954,10 @@ footer .parte2 .columna4 .submit-button {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .team .team-section .image1, .team .team-section .image2, .team .team-section .image3, .team .team-section .image4 {
+  .team .team-section .image1,
+  .team .team-section .image2,
+  .team .team-section .image3,
+  .team .team-section .image4 {
     width: 400px;
     height: 400px;
     margin-bottom: 0.5em;
@@ -978,7 +1026,11 @@ footer .parte2 .columna4 .submit-button {
     display: inline-block;
     cursor: pointer;
   }
-  .testimonials #i1:checked ~ #one, .testimonials #i2:checked ~ #two, .testimonials #i3:checked ~ #three, .testimonials #i4:checked ~ #four, .testimonials #i5:checked ~ #five {
+  .testimonials #i1:checked ~ #one,
+  .testimonials #i2:checked ~ #two,
+  .testimonials #i3:checked ~ #three,
+  .testimonials #i4:checked ~ #four,
+  .testimonials #i5:checked ~ #five {
     display: block;
     z-index: 99;
   }
@@ -1053,7 +1105,11 @@ footer .parte2 .columna4 .submit-button {
     display: inline-block;
     cursor: pointer;
   }
-  .testimonials #i1:checked ~ #one, .testimonials #i2:checked ~ #two, .testimonials #i3:checked ~ #three, .testimonials #i4:checked ~ #four, .testimonials #i5:checked ~ #five {
+  .testimonials #i1:checked ~ #one,
+  .testimonials #i2:checked ~ #two,
+  .testimonials #i3:checked ~ #three,
+  .testimonials #i4:checked ~ #four,
+  .testimonials #i5:checked ~ #five {
     display: block;
     z-index: 99;
   }
@@ -1065,6 +1121,7 @@ footer .parte2 .columna4 .submit-button {
     background-color: #007BFF;
   }
 }
+
 
 /*------------------------------------------------------------------------
                             MEDIA QUERY TABLET FOR FOOTER
@@ -1164,4 +1221,3 @@ footer .parte2 .columna4 .submit-button {
     height: 100%;
   }
 }
-/*# sourceMappingURL=style.css.map */
